@@ -1,15 +1,23 @@
-# Gradle custom task example
+# Gradle/Kotlin custom task example
 
-I've created a custom gradle task in
-`buildSrc/src/main/kotlin/com/pablito/HelloTask.kt`, and registered it in
-`build.gradle.kts`. According to what I've read gradle should find the
-`buildSrc` folder automatically and be able to run the task class when invoked
-from the command line, but it's not working for some reason...
+A simple example of a custom gradle task created in the `buildSrc` module, 
+using the Kotlin DSL for the build script.
+
+The trick to get this working, that I couldn't find anywhere online, is this 
+in `buildSrc/build.gradle.kts`:
+
+```kotlin
+plugins {
+    `embedded-kotlin`
+}
+
+repositories {
+    mavenCentral()
+}
+```
 
 Run the task with:
 
-```
+```shell
 > ./gradlew sayHello
 ```
-
-It doesn't work 😕
