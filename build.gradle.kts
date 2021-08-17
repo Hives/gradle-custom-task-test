@@ -1,3 +1,4 @@
+import com.pablito.HelloTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -25,10 +26,3 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.register<HelloTask>("sayHello")
-
-abstract class HelloTask : DefaultTask() {
-    @TaskAction
-    fun sayHello() {
-        println("hello from the hello task")
-    }
-}
