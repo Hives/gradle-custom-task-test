@@ -1,3 +1,4 @@
+import blabla.HelloTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -24,4 +25,4 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
 }
 
-tasks.register<blabla.HelloTask>("sayHello")
+tasks.register<HelloTask>("sayHello")
